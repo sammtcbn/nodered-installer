@@ -14,6 +14,7 @@ if [ "$EUID" -ne 0 ]; then
     exit
 fi
 
+apt -y update
 apt -y install curl npm
 npm install -g --unsafe-perm node-red node-red-dashboard
 
