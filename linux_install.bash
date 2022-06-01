@@ -21,8 +21,8 @@ curl -sL -o ${SERVICE_PATH} https://raw.githubusercontent.com/node-red/linux-ins
 
 sed -i 's/User=pi/User=root/g' ${SERVICE_PATH} || failed "modify service file error"
 sed -i 's/Group=pi/Group=root/g' ${SERVICE_PATH} || failed "modify service file error"
-sed -i 's/WorkingDirectory=\/home\/pi/WorkingDirectory=\/home\/root/g' ${SERVICE_PATH} || failed "modify service file error"
-sed -i 's/EnvironmentFile=-\/home\/pi/EnvironmentFile=-\/home\/root/g' ${SERVICE_PATH} || failed "modify service file error"
+sed -i 's/WorkingDirectory=\/home\/pi/WorkingDirectory=\/root/g' ${SERVICE_PATH} || failed "modify service file error"
+sed -i 's/EnvironmentFile=-\/home\/pi/EnvironmentFile=-\/root/g' ${SERVICE_PATH} || failed "modify service file error"
 
 systemctl daemon-reload || exit 1
 chmod 664 ${SERVICE_PATH} || exit 1

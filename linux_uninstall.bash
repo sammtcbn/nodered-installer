@@ -23,4 +23,4 @@ fi
 
 npm -g remove node-red
 npm -g remove node-red-dashboard
-rm -rf /home/root/.node-red
+rm -rf /root/.node-red
